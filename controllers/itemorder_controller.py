@@ -9,4 +9,4 @@ itemorders_blueprint = Blueprint("itemorders", __name__)
 @itemorders_blueprint("/itemorders")
 def item_orders():
     item_orders = ItemOrder.query.all()
-    return render_template("itemorders/index.jinja", item_orders=item_orders)
+    return render_template("itemorders/index.jinja", item_orders = item_orders)

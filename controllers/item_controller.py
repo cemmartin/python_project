@@ -7,8 +7,8 @@ from models.item import Item
 items_blueprint = Blueprint("items", __name__)
 
 @items_blueprint.route("/items")
-def items(id):
-    items = Item.query.all(id)
+def items():
+    items = Item.query.all()
     return render_template("items/index.jinja", items = items)
 
     
