@@ -6,4 +6,3 @@ class ItemOrder(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     order_id = db.Column(db.Integer, db.ForeignKey('orders.id'))
     item_id = db.Column(db.Integer, db.ForeignKey('items.id'))
-    review = db.Column(db.Text())
