@@ -2,10 +2,11 @@
 
 {% block content %}
 <h1>Items</h1>
-
+<p>
 {% for item in items %}
 
 <a href="/items/{{ item.id }}"> {{item.item_name}}</a>
 {% endfor %}
+</p>
 
 {% endblock %}

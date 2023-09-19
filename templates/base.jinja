@@ -5,10 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Bakery Order Tracker</title>
          {# nav bar goes here --> orders, items, customers(?) & their links (hrefs) # #}
-        
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     </head>
 <body>
     <main>
+    <h1>Bakery Order Tracker</h1>
         <nav>
             <ul>
                 <li><a href="/items">Items</a></li>
