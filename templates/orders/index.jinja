@@ -4,8 +4,18 @@
 <h1> Customers </h1>
 
 <p> 
-{% for order in orders %}
-<a hred="/orders/{{ order.id }}"> {{order.customer}}</a>
-{% endfor %}
+<div class="customer-container">
+    <div class="grid-header">Name</div>
+    <div class="grid-header">Phone Number</div>
+    <div class="grid-header">Email</div>
+    <div class="grid-header">Order</div>
+    {% for order in orders %}
+    <div class="grid-item"><a href="/orders/{{ order.id }}">{{order.customer}}</a></div>
+    <div class="grid-item"><a href="/orders/{{ order.id }}">{{order.phone_number}}</a></div>
+    <div class="grid-item"><a href="/orders/{{ order.id }}">{{order.email}}</a></div>
+    <div class="grid-item"><a href="/orders/{{ order.id }}">{{order.itemorders}}</a></div>
+    {% endfor %}
+{# <a href="/orders/{{ order.id }}"> {{order.customer}}, {{order.phone_number}}, {{order.email}}, {{order.itemorders}}</a> #}
+</div>
 </p>
 {% endblock %}

@@ -2,11 +2,11 @@
 
 {% block content %}
 <h1>Orders</h1>
-<p>
-{% for item in items %}
 
-<a href="/items/{{ item.id }}"> {{item.item_name}}</a>
+
+{% for itemorder in itemorders %}
+    <p> {{ itemorder.order.customer }} : {{ itemorder.order.item_name}}</p>
 {% endfor %}
-</p>
+
 
 {% endblock %}

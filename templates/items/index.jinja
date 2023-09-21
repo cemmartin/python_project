@@ -5,7 +5,8 @@
 <p>
 {% for item in items %}
 
-<a href="/items/{{ item.id }}"> {{item.item_name}}</a>
+{{item.item_name}}: £{{item.price}}
+{# <a href="/items/{{ item.id }}"> {{item.item_name}}: £{{item.price}}</a> #}
 {% endfor %}
 </p>
 

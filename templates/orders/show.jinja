@@ -1,0 +1,13 @@
+{% extends 'base.jinja' %}
+
+{% block content %}
+<h1> {{ order.customer }} </h1>
+
+
+<ul>
+    {% for item in items %}
+    <li>{{item.item_name}}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

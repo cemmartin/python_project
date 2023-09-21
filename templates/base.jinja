@@ -7,6 +7,7 @@
          {# nav bar goes here --> orders, items, customers(?) & their links (hrefs) # #}
 
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/order.css') }}">
     
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,12 +16,12 @@
     </head>
 <body>
     <main>
-    <h1>Bakery Order Tracker</h1>
+    <h1><a href="/">Bakery Order Tracker</a></h1>
         <nav>
             <ul>
                 <li><a href="/items">Items</a></li>
-                <li><a href="/orders">Orders</a></li>
-                <li><a href="/itemorders">Item Orders</a></li>
+                <li><a href="/orders">Customers</a></li>
+                <li><a href="/itemorders">Orders</a></li>
             </ul>
         </nav>
         <section id="content">

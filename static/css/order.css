@@ -1,0 +1,17 @@
+.customer-container {
+    display: grid;
+    grid-template-columns: 2fr 2fr 3fr 3fr;
+    background-color: red;
+
+}
+.grid-header {
+   background-color: pink;
+   border: 5px solid black;
+   grid-gap: 10px;
+   text-align: center;
+}
+
+.grid-item {
+    text-align: left;
+    padding: 20px;
+}

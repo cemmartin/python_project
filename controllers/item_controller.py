@@ -13,6 +13,7 @@ def items():
     return render_template("items/index.jinja", items = items)
 
 # @items_blueprint.route("/items/<id>")
-# def show(id):
-#     return "Hopefully this will show the item's ID"
+# def item_show(id):
+#     item_to_show = Item.query.get(id)    
+#     return render_template("items/show.jinja", item=item_to_show)
     

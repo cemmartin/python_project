@@ -1,5 +1,6 @@
 body {
     font-family: 'Poppins', sans-serif;
+    color: #19233e;
 }
 
 nav>ul {
@@ -11,4 +12,18 @@ nav>ul {
 h1 {
     text-align: center;
     color: blue;
+}
+
+h1>a {
+    text-decoration: none;
+    color: #19233e;
+}
+
+a:visited {
+    color: #19233e;
+
+}
+
+a:hover {
+    color: darkmagenta;
 }
