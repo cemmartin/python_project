@@ -3,6 +3,18 @@
 {% block content %}
 <h1> Customers </h1>
 
+{# NEED TO ADD ORDER TO THIS SECTION #}
+<form name="add_customer" action="/orders" method="post">
+    <label for="customer">Customer</label>
+        <input type="text" name="customer" id="customer" required="yes"/>
+    <label for="phone_number">Phone number</label>
+        <input type="text" name="phone_number" id="phone_number"/>
+    <label for="email">Email</label>
+        <input type="text" name="email" id="email" required="yes"/>
+    <input type="submit" value="Add Customer">
+</form>
+
+
 <p> 
 <div class="customer-container">
     <div class="grid-header">Name</div>

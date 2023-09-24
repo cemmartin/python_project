@@ -12,11 +12,24 @@ def orders():
     orders = Order.query.all()
     return render_template("orders/index.jinja", orders = orders)
 
-# show an order (now customer)
-@orders_blueprint.route("/items/<id>")
+# show an order (UPDATE: will show a customer)
+@orders_blueprint.route("/orders/<id>") 
 def show_order(id):
     order_to_show = Order.query.get(id)
     return render_template("orders/show.jinja", order=order_to_show)
+
+# create new customer
+@orders_blueprint.route("/orders", methods=['POST'])
+def create_order():
+    customer = request.form["customer"]
+    phone_number = request.form["phone_number"]
+    email = request.form['email']
+    customer_to_save = Order(customer= customer, phone_number=phone_number, email=email)
+    db.session.add(customer_to_save)
+    db.session.commit()
+    return redirect("/orders")
+
+
 
 
 # @orders_blueprint.route("/orders/<id>")
@@ -33,4 +46,6 @@ def show_order(id):
 # @orders_blueprint.route("/orders/new", methods=['GET'])
 # def new_order():
 
+
+#need to be able to add new customers & delete exisint customers
     
