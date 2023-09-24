@@ -19,7 +19,7 @@ def show_order(id):
     return render_template("orders/show.jinja", order=order_to_show)
 
 # create new customer
-@orders_blueprint.route("/orders", methods=['POST'])
+@orders_blueprint.route("/orders", methods=["POST"])
 def create_order():
     customer = request.form["customer"]
     phone_number = request.form["phone_number"]
@@ -37,6 +37,18 @@ def remove_order(id):
     db.session.delete(customer)
     db.session.commit()
     return redirect("/orders")
+
+#edit a customer --> not sure how to display this best in the css
+@orders_blueprint.route("/orders/<id>", methods=["POST"])
+def update_order(id):
+    order = Order.query.get(id)
+    order.customer = request.form["customer"]
+    order.phone_number = request.form["phone_number"]
+    order.email = request.form["email"]
+    db.session.commit()
+    redirect_order = "/orders" + "/id" #SOMETHING IS WRONG HERE
+    return redirect(redirect_order)
+
 
 
 
