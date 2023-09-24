@@ -3,11 +3,19 @@
 {% block content %}
 <h1>Orders</h1>
 
+<p class="new_order_button">
+    <a href="/itemorders/new">Place New Order</a>
+</p>
 
-
+<ul>
 {% for itemorder in itemorders %}
     <p> {{ itemorder.order.customer }} : {{ itemorder.order.item_name}}</p>
+    <p>
+        <form action="itemorders/{{ itemorders.id}}/delete" method="POST">
+            <input class="" type="submit" value="Delete Order">
+        </form>
+    </p>
 {% endfor %}
-
+</ul>
 
 {% endblock %}

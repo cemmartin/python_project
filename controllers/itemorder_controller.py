@@ -19,5 +19,19 @@ def create_itemorder():
     item_id = request.form['item_id']
     itemorder = ItemOrder(order_id = order_id, item_id=item_id)
     db.session.add(itemorder)
-    db.sesion.commit()
+    db.session.commit()
     return redirect("/itemorders")
+
+# creating a new itemorder
+@itemorders_blueprint.route("/itemorders/new", methods=['GET'])
+def new_itemorder():
+    orders = Order.query.all()
+    items = Item.query.all()
+    return render_template("itemorders/new.jinja", orders = orders, items = items)
+
+# deleting an itemorder
+@itemorders_blueprint.route("/itemorders/<id>/delete", methods=["POST"])
+def delete_visit(id):
+    ItemOrder.query.filter_by(id =id).delete()
+    db.session.commit()
+    return redirect('/itemorders')
