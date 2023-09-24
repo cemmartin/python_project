@@ -30,7 +30,20 @@ def create_order():
     return redirect("/orders")
 
 
+# delete a customer --> maybe on the show page? or would customers page be more convenient?
+@orders_blueprint.route("/orders/<id>/delete", methods=["POST"])
+def remove_order(id):
+    customer = Order.query.get(id)
+    db.session.delete(customer)
+    db.session.commit()
+    return redirect("/orders")
 
+
+
+
+
+
+# ###########################
 
 # @orders_blueprint.route("/orders/<id>")
 # def show(id):
