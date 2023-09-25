@@ -3,8 +3,15 @@
 {% block content %}
 <h1> {{ order.customer }} </h1>
 
+{{ order.phone_number }}
+{{ order.email }}
 
 <ul>
+    {% for itemorder in order.itemorders %}
+    <li>{{ itemorder.item.item_name }}</li>
+    {% endfor %}
+
+
     {% for item in items %}
     <li>{{item.item_name}}</li>
     {% endfor %}
