@@ -1,17 +1,30 @@
 body {
     font-family: 'Poppins', sans-serif;
     color: #19233e;
+    margin-left: 5vw;
+    margin-right: 5vw;
 }
 
 nav>ul {
     list-style-type: none;
-    display: inline;
+    /* display: inline; */
+    text-align: left;
     
 
 }
+nav>ul>li {
+    display: inline;
+    padding: 10px;
+
+}
+
+.navbar {
+    text-align: center;
+    text-decoration: none;
+}
+
 h1 {
     text-align: center;
-    color: blue;
 }
 
 h1>a {
@@ -27,3 +40,4 @@ a:visited {
 a:hover {
     color: darkmagenta;
 }
+

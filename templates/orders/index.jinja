@@ -6,17 +6,18 @@
 {# NEED TO ADD ORDER TO THIS SECTION #}
 <form name="add_customer" action="/orders" method="post">
     <label for="customer">Customer</label>
-        <input type="text" name="customer" id="customer" required="yes"/>
+        <input type="text" name="customer" id="customer" required="yes"/><br>
     <label for="phone_number">Phone number</label>
-        <input type="text" name="phone_number" id="phone_number"/>
+        <input type="text" name="phone_number" id="phone_number"/><br>
     <label for="email">Email</label>
-        <input type="text" name="email" id="email" required="yes"/>
-    <input type="submit" value="Add Customer">
+        <input type="text" name="email" id="email" required="yes"/><br>
+    <input type="submit" value="Add Customer" class="add-customer-button">
 </form>
 
 
 <p> 
 {% for order in orders %}
+<div class="each-customer-container">
 <div class="customer-container">
     <div class="grid-header">Name</div>
     <div class="grid-header">Phone Number</div>
@@ -29,16 +30,23 @@
     <div class="grid-item"><a href="/orders/{{ order.id }}">{{order.itemorders}}</a></div>
     
 </div>
-
-<form action="/orders/{{ order.id}}" method="POST">
-    <input class="edit_button" type="submit" value="Edit Customer Details"/>
-</form>
-{# something isn't working in the edit button #}
-{# needs to redirect us to a new page orders/id/edit as opposed to a form#}
-
-<form action="/orders/{{ order.id }}/delete" method="POST">
-    <input class="delete_button" type="submit" value="Delete Customer" />
-</form>
+<div class="grid-buttons-customer">
+    <div>
+        <form action="/orders/{{ order.id}}" method="POST" >
+            <input class="edit-button" type="submit" value="Edit Customer Details"/>
+        </form>
+    </div>
+    {# something isn't working in the edit button #}
+    {# needs to redirect us to a new page orders/id/edit as opposed to a form#}
+    <div>
+        <form action="/orders/{{ order.id }}/delete" method="POST">
+            <input class="delete-button" type="submit" value="Delete Customer" />
+        </form>
+    </div>
+    </div>
+</div><br>
+</div>
+</div>
 {% endfor %}
 </p>
 {% endblock %}

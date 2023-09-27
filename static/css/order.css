@@ -1,17 +1,53 @@
 .customer-container {
     display: grid;
     grid-template-columns: 2fr 2fr 3fr 3fr;
-    background-color: red;
 
 }
 .grid-header {
-   background-color: pink;
-   border: 5px solid black;
+   /* border: 5px solid #19233e; */
    grid-gap: 10px;
    text-align: center;
+   font-weight: bold;
 }
 
 .grid-item {
     text-align: left;
     padding: 20px;
+}
+
+
+.grid-buttons-customer {
+    text-align: center;
+    display: grid;
+    grid-template-columns: auto auto;
+    
+}
+
+.each-customer-container {
+    background-color: lightseagreen;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.edit-button, .delete-button, .add-customer-button{
+    font-family: 'Poppins', sans-serif;
+    color: #19233e;
+    margin: 5px;
+    padding: 5px 10px;
+    /* background-color: pink; */
+    border-radius: 5px;
+    border: none;
+}
+
+.edit-button {
+    background-color: lightyellow;
+}
+
+
+.delete-button {
+    font-family: 'Poppins', sans-serif;
+    background-color: pink;
+    margin: 5px;
+    padding: 5 px 10px;
+    border: none;
 }

@@ -35,3 +35,6 @@ def delete_visit(id):
     ItemOrder.query.filter_by(id =id).delete()
     db.session.commit()
     return redirect('/itemorders')
+
+
+

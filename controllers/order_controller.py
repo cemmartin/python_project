@@ -38,7 +38,7 @@ def remove_order(id):
     db.session.commit()
     return redirect("/orders")
 
-#edit a customer --> not sure how to display this best in the css
+# edit a customer --> not sure how to display this best in the css
 @orders_blueprint.route("/orders/<id>", methods=["POST"])
 def update_order(id):
     order = Order.query.get(id)
@@ -49,8 +49,8 @@ def update_order(id):
     redirect_order = "/orders" + "/id" #SOMETHING IS WRONG HERE
     return redirect(redirect_order)
 
-
-
+# @orders_blueprint.route("/orders/<id>", methods=["GET"])
+# def update_order(id):
 
 
 
