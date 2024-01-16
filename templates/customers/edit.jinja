@@ -3,14 +3,15 @@
 {% block content %}
 <h1>Edit Customer Details </h1>
 
-<form name="add_customer" action="/customers" method="post" id="edit_form">
+<form name="add_customer" action="/customers/{{id}}/update" method="POST" id="edit_form">
     <label for="customer">Customer</label>
         <input type="text" name="customer" id="customer" required="yes"/><br>
     <label for="phone_number">Phone number</label>
         <input type="text" name="phone_number" id="phone_number"/><br>
     <label for="email">Email</label>
         <input type="text" name="email" id="email" required="yes"/><br>
-    <input type="submit" value="Add Customer" class="edit-customer-button">
+    <input type="submit" value="Update Customer Details" class="update-customer-button">
 </form>
 
 {% endblock %}
+

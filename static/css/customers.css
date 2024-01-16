@@ -1,8 +1,8 @@
 .customer-container {
     display: grid;
     grid-template-columns: 2fr 2fr 3fr 3fr;
-
 }
+
 .grid-header {
    /* border: 5px solid #19233e; */
    grid-gap: 10px;

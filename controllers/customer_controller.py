@@ -30,7 +30,7 @@ def create_customer():
     return redirect("/customers")
 
 
-# delete a customer --> maybe on the show page? or would customers page be more convenient?
+# delete a customer
 @customers_blueprint.route("/customers/<id>/delete", methods=["POST"])
 def remove_customer(id):
     customer = Customer.query.get(id)
@@ -38,12 +38,40 @@ def remove_customer(id):
     db.session.commit()
     return redirect("/customers")
 
-# edit a customer --> not sure how to display this best in the css
+# edit a customer --> not currently work; just adding new submission instead of actually editing the existing
 @customers_blueprint.route("/customers/<id>/edit", methods=["GET"])
+def edit_customer(id):
+    return render_template("/customers/edit.jinja", id=id)  #preventing the redirect from happening    #
+    # return redirect("/customers.index") #
+
+
+#update a customer (from edit)
+@customers_blueprint.route("/customers/<id>/update", methods = ["POST"]) #would this be /update
+# @customers_blueprint.route("/customers/<id>", methods=["POST"])
 def update_customer(id):
-    return render_template("/customers/edit.jinja", id=id) #this line is the problem child
-      
-    return redirect("/customers.index")
+    customer = Customer.query.get(id)
+    customer.customer = request.form['customer']
+    customer.phone_number = request.form['phone_number']
+    customer.email = request.form['email']
+    db.session.commit()
+    return redirect("/customers")
+    # return redirect(url_for('customers.index'))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -64,9 +92,6 @@ def update_customer(id):
 # @orders_blueprint.route("/orders/<id>", methods=["GET"])
 # def update_order(id):
 
-
-#Qs
-# why not PATCH?
 
 
 
