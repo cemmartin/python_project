@@ -1,14 +1,14 @@
 {% extends 'base.jinja' %}
 
 {% block content %}
-<h1> {{ order.customer }} </h1>
+<h1> {{ customer.customer }} </h1>
 
-{{ order.phone_number }}
-{{ order.email }}
+{{ customer.phone_number }}
+{{ customer.email }}
 
 <ul>
-    {% for itemorder in order.itemorders %}
-    <li>{{ itemorder.item.item_name }}</li>
+    {% for order in customer.orders %}
+    <li>{{ order.item.item_name }}</li>
     {% endfor %}
 
 

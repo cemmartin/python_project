@@ -17,9 +17,10 @@ brew install postgresql@14 (this will only work on mac)
 createdb proj1
 
 In app.py:
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://<your_postgres_user>@localhost:5432/setlist_app"
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://<your_postgres_user>@localhost:5432/bakery_app"
 
 To run the application:
+flask db init
 flask db upgrade
 flask seed
 flask run

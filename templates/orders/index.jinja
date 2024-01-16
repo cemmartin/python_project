@@ -1,52 +1,33 @@
 {% extends 'base.jinja' %}
 
 {% block content %}
-<h1> Customers </h1>
+<h1>Orders</h1>
 
-{# NEED TO ADD ORDER TO THIS SECTION #}
-<form name="add_customer" action="/orders" method="post">
-    <label for="customer">Customer</label>
-        <input type="text" name="customer" id="customer" required="yes"/><br>
-    <label for="phone_number">Phone number</label>
-        <input type="text" name="phone_number" id="phone_number"/><br>
-    <label for="email">Email</label>
-        <input type="text" name="email" id="email" required="yes"/><br>
-    <input type="submit" value="Add Customer" class="add-customer-button">
-</form>
-
-
-<p> 
-{% for order in orders %}
-<div class="each-customer-container">
-<div class="customer-container">
-    <div class="grid-header">Name</div>
-    <div class="grid-header">Phone Number</div>
-    <div class="grid-header">Email</div>
-    <div class="grid-header">Order</div>
-    
-    <div class="grid-item"><a href="/orders/{{ order.id }}">{{order.customer}}</a></div>
-    <div class="grid-item"><a href="/orders/{{ order.id }}">{{order.phone_number}}</a></div>
-    <div class="grid-item"><a href="/orders/{{ order.id }}">{{order.email}}</a></div>
-    <div class="grid-item"><a href="/orders/{{ order.id }}">{{order.itemorders}}</a></div>
-    
-</div>
-<div class="grid-buttons-customer">
-    <div>
-        <form action="/orders/{{ order.id}}" method="POST" >
-            <input class="edit-button" type="submit" value="Edit Customer Details"/>
-        </form>
-    </div>
-    {# something isn't working in the edit button #}
-    {# needs to redirect us to a new page orders/id/edit as opposed to a form#}
-    <div>
-        <form action="/orders/{{ order.id }}/delete" method="POST">
-            <input class="delete-button" type="submit" value="Delete Customer" />
-        </form>
-    </div>
-    </div>
-</div><br>
-</div>
-</div>
-{% endfor %}
+<p class="button_wrapper">
+    <a class="new_order_button" href="/orders/new">Place New Order</a>
 </p>
+
+
+{# there is an issue somewhere in here #}
+<ul>
+    {% for order in orders %}
+    <li>
+        <p>{{ order.customer.customer }}: {{ order.item.item_name }} </p>
+        <p>
+        <form action="orders/{{ orders.id }}/delete" method="POST">
+            <input class="order_delete" type="submit" value="Delete Order">
+        </form>
+        </p>
+    </li>
+    {% endfor %}
+</ul>
+
+
+
+{# there is an issue somwhere in here #}
+
+<div>
+
+</div>
+
 {% endblock %}

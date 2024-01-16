@@ -3,11 +3,11 @@
 {% block content %}
 <h1> Add New Order</h1>
 
-<form action="/itemorders" method="post">
-    <label for="order">Select Customer:</label>
-        <select name="order_id" id="order">
-            {% for order in orders %}
-            <option value="{{ order.id }}">{{ order.customer }}</option>
+<form action="/orders" method="post">
+    <label for="customer">Select Customer:</label>
+        <select name="customer_id" id="customer">
+            {% for customer in customers %}
+            <option value="{{ customer.id }}">{{ customer.customer }}</option>
             {% endfor %}
         </select>
 
