@@ -14,7 +14,7 @@
     <li>
         <p>{{ order.customer.customer }}: {{ order.item.item_name }} </p>
         <p>
-        <form action="orders/{{ orders.id }}/delete" method="POST">
+        <form action="orders/{{ order.id }}/delete" method="POST">
             <input class="order_delete" type="submit" value="Delete Order">
         </form>
         </p>

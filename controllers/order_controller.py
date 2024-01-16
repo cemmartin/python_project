@@ -36,10 +36,21 @@ def delete_order(id):
     db.session.commit()
     return redirect('/orders')
 
+
+
+#this didn't work either
     # order = Order.query.filter_by(id =id).delete()
     # db.session.delete(order)
     # db.session.commit()
     # return redirect('/orders')
+
+
+
+
+
+
+
+
 
 # Need to add edit here!!
 

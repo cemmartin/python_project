@@ -17,7 +17,7 @@ from models.order import Order
 
 from controllers.item_controller import items_blueprint
 from controllers.customer_controller import customers_blueprint
-from controllers.order import orders_blueprint
+from controllers.order_controller import orders_blueprint
 
 app.register_blueprint(items_blueprint)
 app.register_blueprint(customers_blueprint)
