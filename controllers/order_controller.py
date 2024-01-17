@@ -36,23 +36,20 @@ def delete_order(id):
     db.session.commit()
     return redirect('/orders')
 
+# Need to add edit & update here!! The below is not working & I can't figure out why :(
 
 
-#this didn't work either
-    # order = Order.query.filter_by(id =id).delete()
-    # db.session.delete(order)
-    # db.session.commit()
-    # return redirect('/orders')
+# @orders_blueprint("/orders/<id>/edit", methods=["GET"])
+# def edit_order(id):
+#     return render_template("/orders/edit.jinja", id=id) #need to add edit.jinja
 
-
-
-
-
-
-
-
-
-# Need to add edit here!!
+# @orders_blueprint.route("/orders/<id>/update", methods=["POST"]) #not 100% sure this is the best way to go about this
+# def update_order(id):
+#     order = Order.query.get(id)
+#     order.customer_id['customer_id']
+#     order.item_id['item_id']
+#     db.session.commit()
+#     return redirect("/orders")
 
 
 

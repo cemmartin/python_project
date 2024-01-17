@@ -1,0 +1,24 @@
+{% extends 'base.jinja %' %}
+
+{% block content %}
+<h1> Edit Order Details </h1>
+
+{# the below has not been tested #}
+<form action="/orders/{{id}}/update" method="POST">
+    <label for="customer">Select Customer:</label>
+        <select name="customer_id" id="customer">
+            {% for customer in customers %}
+            <option value="{{ customer.id }}">{{ customer.customer }}</option>
+            {% endfor %}
+        </select>
+
+    <label for="item">Select Items:</label>
+        <select name="item_id" id="item">
+            {% for item in items %}
+            <option value="{{ item.id }}">{{ item.item_name }}</option>
+            {% endfor %}
+        </select>
+    <input type="submit" value="Update Order">
+</form>
+
+{% endblock%}

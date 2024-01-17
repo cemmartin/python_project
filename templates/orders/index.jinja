@@ -13,9 +13,13 @@
     <li>
         <p>{{ order.customer.customer }}: {{ order.item.item_name }} </p>
         <p>
-        <form action="orders/{{ order.id }}/delete" method="POST">
-            <input class="order_delete" type="submit" value="Delete Order">
-        </form>
+            <form action="orders/{{ order.id}}/edit" method="GET" >
+                <input type="submit" value="Edit Details">
+            </form>
+
+            <form action="orders/{{ order.id }}/delete" method="POST">
+                <input class="order_delete" type="submit" value="Delete Order">
+            </form>
         </p>
     </li>
     {% endfor %}

@@ -5,7 +5,7 @@
 
 {# NEED TO ADD ORDER TO THIS SECTION #}
 <form name="add_customer" action="/customers" method="post">
-    <label for="customer">Customer</label>
+    <label for="customer">Customer Name</label>
         <input type="text" name="customer" id="customer" required="yes"/><br>
     <label for="phone_number">Phone number</label>
         <input type="text" name="phone_number" id="phone_number"/><br>
@@ -22,12 +22,17 @@
         <div class="grid-header">Name</div>
         <div class="grid-header">Phone Number</div>
         <div class="grid-header">Email</div>
-        <div class="grid-header">Order</div>
+        {# <div class="grid-header">Order</div> #}
         
         <div class="grid-item"><a href="/customers/{{ customer.id }}">{{customer.customer}}</a></div>
         <div class="grid-item"><a href="/customers/{{ customer.id }}">{{customer.phone_number}}</a></div>
         <div class="grid-item"><a href="/customers/{{ customer.id }}">{{customer.email}}</a></div>
-        <div class="grid-item"><a href="/customers/{{ customer.id }}">{{customer.orders}}</a></div>
+        {# <div class="grid-item"><a href="/customers/{{ customer.id }}">{{customer.orders}}</a></div> #}
+        {# {% for item in customer.orders %} #this does not currently work- want to loop through the items in order
+            <div class="grid-item"><a href="/customer/{{customer.id}}"> {{customer.orders.item_id.item_name}}</a></div>
+        {% endfor %} #}
+
+        
         
     </div>
     <div class="grid-buttons-customer">
