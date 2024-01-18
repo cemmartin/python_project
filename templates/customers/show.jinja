@@ -7,7 +7,6 @@
 {{ customer.email }}
 
 <ul>
-    {# Not currently showing each order  #}
     {% for order in customer.orders %}
     <li>{{ order.item.item_name }}</li>
     {% endfor %}

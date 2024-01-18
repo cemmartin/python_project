@@ -13,8 +13,11 @@
     <li>
         <p>{{ order.customer.customer }}: {{ order.item.item_name }} </p>
         <p>
+            <form action="orders/{{order.id}}" method="GET">
+                <input type="submit" value="See Order Details">
+            </form>
             <form action="orders/{{ order.id}}/edit" method="GET" >
-                <input type="submit" value="Edit Details">
+                <input type="submit" value="Edit Order">
             </form>
 
             <form action="orders/{{ order.id }}/delete" method="POST">

@@ -13,10 +13,10 @@ def customers():
     return render_template("customers/index.jinja", customers=customers)
 
 # show an order (UPDATE: will show a customer)
-@customers_blueprint.route("/orders/<id>") 
+@customers_blueprint.route("/customers/<id>") 
 def show_customer(id):
     customer_to_show = Customer.query.get(id)
-    return render_template("orders/show.jinja", customer=customer_to_show)
+    return render_template("customers/show.jinja", customer=customer_to_show)
 
 # create new customer
 @customers_blueprint.route("/customers", methods=["POST"])
@@ -38,7 +38,7 @@ def remove_customer(id):
     db.session.commit()
     return redirect("/customers")
 
-# edit a customer --> not currently work; just adding new submission instead of actually editing the existing
+# edit a customer -
 @customers_blueprint.route("/customers/<id>/edit", methods=["GET"])
 def edit_customer(id):
     return render_template("/customers/edit.jinja", id=id)  #preventing the redirect from happening    #
@@ -46,8 +46,7 @@ def edit_customer(id):
 
 
 #update a customer (from edit)
-@customers_blueprint.route("/customers/<id>/update", methods = ["POST"]) #would this be /update
-# @customers_blueprint.route("/customers/<id>", methods=["POST"])
+@customers_blueprint.route("/customers/<id>/update", methods = ["POST"]) 
 def update_customer(id):
     customer = Customer.query.get(id)
     customer.customer = request.form['customer']

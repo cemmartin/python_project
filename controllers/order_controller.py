@@ -12,6 +12,11 @@ def orders():
     orders = Order.query.all()
     return render_template("orders/index.jinja", orders=orders)
 
+@orders_blueprint.route("/orders/<id>")
+def show_order(id):
+    order_to_show = Order.query.get(id)
+    return render_template("orders/show.jinja", order=order_to_show)
+
 # creating an order
 @orders_blueprint.route("/orders", methods=["POST"])
 def create_order():
@@ -38,10 +43,9 @@ def delete_order(id):
 
 # Need to add edit & update here!! The below is not working & I can't figure out why :(
 
-
-# @orders_blueprint("/orders/<id>/edit", methods=["GET"])
-# def edit_order(id):
-#     return render_template("/orders/edit.jinja", id=id) #need to add edit.jinja
+@orders_blueprint.route("/orders/<id>/edit", methods=["GET"])
+def edit_order(id):
+    return render_template("/orders/edit.jinja", id=id) 
 
 # @orders_blueprint.route("/orders/<id>/update", methods=["POST"]) #not 100% sure this is the best way to go about this
 # def update_order(id):
