@@ -13,7 +13,7 @@ from seed import seed
 from models.customer import Customer
 from models.item import Item
 from models.order import Order
-from models.orderItems import OrderItems
+from models.orderItem import OrderItem
 
 
 from controllers.item_controller import items_blueprint

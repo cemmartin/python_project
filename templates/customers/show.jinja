@@ -7,19 +7,22 @@
 <br>
 {{ customer.email }}
 
-<ul>
+
+{# need to sort the below out in order to show orders or items #}
+{# <ul>
     {% for item in customer.customer_id%}
-</ul>
+</ul> #}
 
 
 <ul>
-    {% for order in customer.orders %}
+    {# {% for order in customer.orders %}
     <li>{{ order.item.item_name }}</li>
     {% endfor %}
 
     {% for item in items %}
     <li>{{item.item_name}}</li>
-    {% endfor %}
+    {% endfor %} #}
+
 </ul>
 
 

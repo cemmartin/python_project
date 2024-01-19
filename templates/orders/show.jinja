@@ -6,16 +6,15 @@
 
 {# none of this is working #}
 <ul>
-    {% for order in customer.orders %}
+    {% for order in orders %}
         <li>{{ order.item.item_name }}</li>
     {% endfor %}
 </ul>
-<p>Customer:<p>
-    <p> 
-        {# {{customer.customer}} #}
+{#  #}
 
-        {# {{order.customer_id.customer.customer}}  #}
-        {# the above line is the problem child #}
-    </p>
 
+<p>Customer: {{order.customer.customer}}<p>
+ <p>ID: # {{order.customer_id}}</p>
+ {# need to work on seeing the items in the order --> backref #}
+<p>Items: Need to fix later{{order.item}}</p> {# not currently showing item#}
 {% endblock %}

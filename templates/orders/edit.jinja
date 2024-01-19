@@ -4,27 +4,38 @@
 <h1> Edit Order Details </h1>
 
 {# the below has not been tested #}
-<form action="/orders/{{ id }}/update" method="POST">
+<form action="/orders/{{ id }}/edit" method="POST">
+    {# something needs to shift here #}
     <label for="customer">Select Customer:</label>
     {# the issue is in the select block below #}
-        {# don't think it's accessing the  #}
-        <select name="customer_id" id="customer">
-            {% for customer in customers %}
-            <option value="{{ customer.id }}">{{ customer.customer }}</option>
-            {% endfor %}
-        </select>
-        
-    {# <label for="date" id="date">Select Pickup Date:</label>
-        <input type="date" id="date"> #}
-
-    <label for="item">Select Items:</label>
-    {# the issue is in the select block below #}
-        <select name="item_id" id="item">
-            {% for item in items %}
-            <option value="{{ item.id }}">{{ item.item_name }}</option>
-            {% endfor %}
-        </select>
+    {# don't think it's accessing the #}
+    <select name="customer_id" id="customer">
+        {% for customer in customers %}
+        <option value="{{ customer.id }}">{{ customer.customer }}</option>
+        {% endfor %}
+    </select>
+    <br>
+    <label class="item" id="item">Select Items:</label>
+    {# needs to be checkboxes instead #}
+    {% for item in items %}
+    <label><br>
+        <input type="checkbox" name="item_ids" value="{{item.id}}">
+        <span class="checkmark"></span>{{item.item_name}}
+    </label>
+    {% endfor %}
+    <br>
     <input type="submit" value="Update Order">
 </form>
+
+{# List of all OrderItems #}
+
+
+<ul>
+    {% for item in OrderItems %}
+    <li>{{ item.item_name }}</li><button>Testing testing 123 </button>
+    {% endfor %}
+    {# <li>Scone <button>Delete</button></li>
+    <li>Cake</li> #}
+</ul>
 
 {% endblock%}

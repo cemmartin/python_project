@@ -6,6 +6,8 @@ class Item(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     item_name = db.Column(db.String(64))
     price = db.Column(db.Integer)
+    orderItems = db.relationship("OrderItem", backref="item") 
+        # added above
     # orders = db.relationship("Order", backref="item") #would I remove this?
 
     def __repr__(self):

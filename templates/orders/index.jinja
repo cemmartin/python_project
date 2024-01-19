@@ -11,7 +11,7 @@
 <ul>
     {% for order in orders %}
     <li>
-        <p>Order #{{order.id}}: {{ order.customer.customer }}</p>
+        <p>Order #{{order.id}}: {{ order.customer.customer }}, {{ order.OrderItems}}</p>
         {# <p>{{ order.customer.customer }}: {{ order.item.item_name }} </p> #}
         <p>
             <form action="orders/{{order.id}}" method="GET">

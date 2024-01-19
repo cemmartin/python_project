@@ -6,5 +6,6 @@ class Order(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     pickup_date = db.Column(db.String(30))
     customer_id = db.Column(db.Integer, db.ForeignKey('customers.id'))
+    orderItems = db.relationship("OrderItem", backref = "order")
     # Items = db.relationship("Item", backref="order")
     # item_id = db.Column(db.Integer, db.ForeignKey('items.id')) #remove here later

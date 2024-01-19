@@ -10,18 +10,16 @@
             <option value="{{ customer.id }}">{{ customer.customer }}</option>
             {% endfor %}
         </select>
-
-    {# <label for="date" id="date">Select Pickup Date:</label>
-        <input type="date" id="date"> #}
+    <input class="new_order_button" type="submit" value="Start Order">
 
 {# should redirect to this #}
-    <label for="item">Select Items:</label>
+    {# <label for="item">Select Items:</label>
         <select name="item_id" id="item">
             {% for item in items %}
             <option value="{{ item.id }}">{{ item.item_name }}</option>
             {% endfor %}
         </select>
-    <input class="new_order_button" type="submit" value="Place New Order">
+    <input class="new_order_button" type="submit" value="Place New Order"> #}
 
 </form>
 
