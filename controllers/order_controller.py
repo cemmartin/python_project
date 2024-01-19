@@ -23,7 +23,14 @@ def show_order(id):
     #     # pdb.set_trace()
     #     return render_template("orders/show.jinja", order=order_to_show, customer=customer)
     order_to_show = Order.query.get(id)
-    return render_template("orders/show.jinja", order=order_to_show)
+    # added
+    # customers = Customer.query.all()
+    # items = Item.query.all()
+    # orders = Order.query.all()
+    orderItems = OrderItem.query.all() 
+        # the above worked
+    # added
+    return render_template("orders/show.jinja", order=order_to_show, orderItems=orderItems)
 
 
 # creating an order

@@ -14,7 +14,10 @@
 
 
 <p>Customer: {{order.customer.customer}}<p>
- <p>ID: # {{order.customer_id}}</p>
- {# need to work on seeing the items in the order --> backref #}
-<p>Items: Need to fix later{{order.item}}</p> {# not currently showing item#}
+<p>ID: # {{order.customer_id}}</p>
+<br>
+<p>Items in Order:</p>
+    {% for item_id in orderItems%}
+        <li>{{item_id.item.item_name}}</li>
+    {% endfor %}
 {% endblock %}
