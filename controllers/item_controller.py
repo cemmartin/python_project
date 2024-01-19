@@ -15,16 +15,16 @@ def items():
     # customer1 = Customer(customer="Bella")
     # customer2 = Customer(customer="Sophia")
 
-    # # item1 = Item(item_name="Babka", price=10)
-    # # item2 = Item(item_name="Scone", price= 3)
-    # # item3 = Item(item_name="Chocolate Chip Cookie", price=3)
+    # item1 = Item(item_name="Babka", price=10)
+    # item2 = Item(item_name="Scone", price= 3)
+    # item3 = Item(item_name="Chocolate Chip Cookie", price=3)
 
     # db.session.add(customer1)
     # db.session.add(customer2)
 
-    # # db.session.add(item1)
-    # # db.session.add(item2) 
-    # # db.session.add(item3)
+    # db.session.add(item1)
+    # db.session.add(item2) 
+    # db.session.add(item3)
     # db.session.commit() 
 
     return render_template("items/index.jinja", items = items)

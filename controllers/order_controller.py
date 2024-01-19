@@ -4,6 +4,7 @@ from models.customer import Customer
 from models.order import Order
 from models.item import Item
 from app import db
+import pdb
 
 orders_blueprint = Blueprint("orders", __name__)
 
@@ -15,17 +16,21 @@ def orders():
 @orders_blueprint.route("/orders/<id>")
 def show_order(id):
     order_to_show = Order.query.get(id)
-    return render_template("orders/show.jinja", order=order_to_show)
+    customer = Customer.query.get(order_to_show.customer_id)
+    # print(order_to_show)
+    # pdb.set_trace()
+    return render_template("orders/show.jinja", order=order_to_show, customer=customer)
 
 # creating an order
 @orders_blueprint.route("/orders", methods=["POST"])
 def create_order():
     customer_id = request.form['customer_id']
-    item_id = request.form['item_id']
-    order = Order(customer_id = customer_id, item_id = item_id)
+    # item_id = request.form['item_id']
+    order = Order(customer_id = customer_id)
     db.session.add(order)
     db.session.commit()
     return redirect("/orders")
+# create order then add items to it
 
 # creating a new ORDER
 @orders_blueprint.route("/orders/new", methods=['GET'])
@@ -45,7 +50,9 @@ def delete_order(id):
 
 @orders_blueprint.route("/orders/<id>/edit", methods=["GET"])
 def edit_order(id):
-    return render_template("/orders/edit.jinja", id=id) 
+    customers = Customer.query.all()
+    items = Item.query.all()
+    return render_template("/orders/edit.jinja", id=id, customers=customers, items=items) 
 
 # @orders_blueprint.route("/orders/<id>/update", methods=["POST"]) #not 100% sure this is the best way to go about this
 # def update_order(id):

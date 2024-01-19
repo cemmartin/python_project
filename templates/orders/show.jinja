@@ -3,13 +3,17 @@
 {% block content %}
 <h1> Order #{{ order.id }}</h1>
 
+
+{# none of this is working #}
 <ul>
-    {% for order in orders %}
-        <li>{{ order.item.item_name}}</li>
+    {% for order in customer.orders %}
+        <li>{{ order.item.item_name }}</li>
     {% endfor %}
 </ul>
-<h3>Customer Details</h3>
-    <p>
+<p>Customer:<p>
+    <p> 
+        {# {{customer.customer}} #}
+
         {# {{order.customer_id.customer.customer}}  #}
         {# the above line is the problem child #}
     </p>
