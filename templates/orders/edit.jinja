@@ -27,13 +27,13 @@
     <input type="submit" value="Update Order">
 </form>
 
-{# List of all OrderItems #}
-
 
 <ul>
-    {% for item in OrderItems %}
-    <li>{{ item.item_name }}</li><button>Testing testing 123 </button>
+    {% for item_id in orderItems%}
+        <li>{{item_id.item.item_name}}</li>
+        <button>Delete </button>
     {% endfor %}
+
     {# <li>Scone <button>Delete</button></li>
     <li>Cake</li> #}
 </ul>

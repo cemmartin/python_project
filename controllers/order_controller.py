@@ -61,10 +61,11 @@ def delete_order(id):
 def edit_order(id):
     customers = Customer.query.all()
     items = Item.query.all()
+    orders = Order.query.all()
+    orderItems = OrderItem.query.all()
     # get all the OrderItems for this order
     return render_template(
-        "/orders/edit.jinja", id=id, customers=customers, items=items
-    )
+        "/orders/edit.jinja", id=id, customers=customers, items=items, orders=orders, orderItems=orderItems)
 
 
 # not 100% sure about this
