@@ -78,21 +78,8 @@ def update_order(id):
         db.session.commit()
     return redirect("/orders")
 
-    # order = Order.query.get(id)
-    # item_id = request.form.get("item")
-    # item = Item.query.get(item_id)
-    # if item:
-    #     new_orderItem = OrderItem(item=item, order = order)
-    #     db.session.add(new_orderItem)
-    #     db.session.commit()
-    # return redirect("/order")
 
 
 # want to create new orderItem object w/ item id & order id & save to db
 # request.form - going to have the list of check boxes in it & that's the lst you want to loop around
 # item id will be the thing in each iteration
-
-
-# Q's
-# would i append anything???
-# would there be any truethy/falsiness involved? If statement?

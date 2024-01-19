@@ -27,11 +27,11 @@
     <input type="submit" value="Update Order">
 </form>
 
-
+<h3>Items Currently in Order</h3>
 <ul>
     {% for item_id in orderItems%}
         <li>{{item_id.item.item_name}}</li>
-        <button>Delete </button>
+        <button action="/orders/{{ id }}">Delete </button>
     {% endfor %}
 
     {# <li>Scone <button>Delete</button></li>
